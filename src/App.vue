@@ -26,6 +26,7 @@
             })
             .then((response) =>{
                 this.store.movies = response.data.results
+                console.log(response.data.results)
             })
         }
     },
