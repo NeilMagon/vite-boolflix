@@ -1,7 +1,7 @@
 <script>
-export default {
-  
-}
+    export default {
+        name: 'MainMovies'
+    }
 </script>
 
 <template>
