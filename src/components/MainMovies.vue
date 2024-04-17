@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <section>
+    <section class="container">
         <div v-for="movie in store.movies">
             <div>Name:{{ movie.title }}</div>
             <div>Original Name: {{ movie.original_title }}</div>
@@ -21,4 +21,9 @@
     </section>
 </template>
 
-<style scoped lang="scss"></style> 
+<style scoped lang="scss">
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style> 

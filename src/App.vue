@@ -19,13 +19,13 @@
         getMoviesSeries(){
             const queryParams= {
                 api_key: 'e99307154c6dfb0b4750f6603256716d',
-                quey: store.userImput
+                query: store.userInput
             };
             axios.get('https://api.themoviedb.org/3/search/movie',{
                 params: queryParams
             })
             .then((response) =>{
-                this.store.movies = response.data.result
+                this.store.movies = response.data.results
             })
         }
     },
@@ -34,7 +34,7 @@
 
 <template>
     <header>
-        <AppHeader @searchMovieSeries="getMoviesSeries"></AppHeader>
+        <AppHeader @searchMoviesSeries="getMoviesSeries"></AppHeader>
     </header>
     <main>
         <MainMovies></MainMovies>

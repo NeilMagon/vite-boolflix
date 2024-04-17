@@ -12,8 +12,8 @@
 
 <template>
     <section>
-        <input type="text" v-model="store.userImput">
-        <button @click="$emit('searchMovieSeries')">Cerca</button>
+        <input type="text" v-model="store.userInput">
+        <button @click="$emit('searchMoviesSeries')">Cerca</button>
     </section>
 </template>
 
