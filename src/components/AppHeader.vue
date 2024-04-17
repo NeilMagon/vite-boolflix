@@ -17,4 +17,6 @@
     </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+    @use '../style/partials/variables' as *;
+</style>

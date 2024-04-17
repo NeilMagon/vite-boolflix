@@ -22,6 +22,7 @@
 </template>
 
 <style scoped lang="scss">
+    @use '../style/partials/variables' as *;
     .container{
         display: flex;
         flex-wrap: wrap;
