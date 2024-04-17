@@ -1,13 +1,19 @@
 <script>
+    import { store } from '../store.js';
     export default {
-        name: 'AppHeader'
+        name: 'AppHeader',
+        data() {
+        return {
+            store
+        };
+    },
     }
 </script>
 
 <template>
     <section>
-        <input type="text">
-        <button>Cerca</button>
+        <input type="text" v-model="store.userImput">
+        <button @click="$emit('searchMovieSeries')">Cerca</button>
     </section>
 </template>
 
