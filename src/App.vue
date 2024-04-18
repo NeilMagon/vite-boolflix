@@ -1,14 +1,12 @@
 <script>
     import AppHeader from './components/AppHeader.vue';
     import MainMovies from './components/MainMovies.vue';
-    import MainSeries from './components/MainSeries.vue';
     import axios from 'axios';
     import { store } from './store.js';
     export default {
         components: {
             AppHeader,
-            MainMovies,
-            MainSeries
+            MainMovies
         },
         data() {
         return {
@@ -39,7 +37,6 @@
     </header>
     <main>
         <MainMovies></MainMovies>
-        <MainSeries></MainSeries>
     </main>
 </template>
 

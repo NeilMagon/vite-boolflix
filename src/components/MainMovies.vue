@@ -1,10 +1,10 @@
 <script>
-    import MovieLanguage from './MovieLanguage.vue';
+    import CardMovies from './CardMovies.vue';
     import { store } from '../store.js';
     export default {
         name: 'MainMovies',
         components: {
-            MovieLanguage
+            CardMovies
         },
         data() {
             return {
@@ -16,12 +16,7 @@
 
 <template>
     <section class="container">
-        <div class="col" v-for="movie in store.movies">
-            <div>Name:{{ movie.title }}</div>
-            <div>Original Name: {{ movie.original_title }}</div>
-            <MovieLanguage></MovieLanguage>
-            <div>Vote:{{ movie.vote_average }}</div>
-        </div>
+        <CardMovies v-for="movie in store.movies" :key="movie.id" :cardInfo="movie"></CardMovies>
     </section>
 </template>
 
@@ -31,8 +26,5 @@
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        .col{
-            width: calc(100% / 4 - 15px);
-        }
     }
 </style> 
