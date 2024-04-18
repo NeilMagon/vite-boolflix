@@ -26,8 +26,8 @@
 
 <template>
     <div class="col">
-        <div>Name:{{ cardInfo.title }}</div>
-        <div>Original Name: {{ cardInfo.original_title }}</div>
+        <div>Name:{{ cardInfo.title || cardInfo.name }}</div>
+        <div>Original Name: {{ cardInfo.original_title || cardInfo.original_name }}</div>
         <div class="img-container" v-if="cardInfo.original_language === flags[0].lang">
             Language: 
             <div class="flag-container">
@@ -58,6 +58,7 @@
                 <img :src="getImageUrl(flags[4].lang)" :alt="cardInfo.original_language">
             </div>
         </div>
+        <div v-else>Language: {{ cardInfo.original_language }}</div>
         <div>Vote:{{ cardInfo.vote_average }}</div>
     </div>
 </template>

@@ -24,7 +24,12 @@
             })
             .then((response) =>{
                 this.store.movies = response.data.results
-                console.log(response.data.results)
+            });
+            axios.get('https://api.themoviedb.org/3/search/tv',{
+                params: queryParams
+            })
+            .then((response) =>{
+                this.store.series = response.data.results
             })
         }
     },
