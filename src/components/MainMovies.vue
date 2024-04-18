@@ -16,25 +16,16 @@
 
 <template>
     <section class="container">
-        <h1>Movies</h1>
-        <div class="col">
-            <CardMovies v-for="movie in store.movies" :key="movie.id" :cardInfo="movie"></CardMovies>
-        </div>
+        <CardMovies v-for="movie in store.movies" :key="movie.id" :cardInfo="movie"></CardMovies>
     </section>
     <section class="container">
-        <h1>Series</h1>
-        <div class="col">
-            <CardMovies v-for="series in store.series" :key="series.id" :cardInfo="series"></CardMovies>
-        </div>
+        <CardMovies v-for="series in store.series" :key="series.id" :cardInfo="series"></CardMovies>
     </section>
 </template>
 
 <style scoped lang="scss">
     @use '../style/partials/variables' as *;
-    h1{
-        font-size: 30px;
-    }
-    .col{
+    .container{
         display: flex;
         flex-wrap: wrap;
         gap: 20px;

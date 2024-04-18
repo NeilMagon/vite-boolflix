@@ -51,7 +51,4 @@
         background-color: black;
         padding: 20px;
     }
-    main{
-        background-color: lightgray;
-    }
 </style>
