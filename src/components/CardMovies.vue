@@ -1,5 +1,4 @@
 <script>
-    import { store } from '../store.js';
     export default {
         name: 'CardMovies',
         props: {
@@ -78,6 +77,9 @@
         position: relative;
         .img-container{
             width: 270px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
             border: 1px solid white;
         }
         .language-container{
@@ -88,6 +90,8 @@
         }
         img{
             width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .position{
             display: none;
