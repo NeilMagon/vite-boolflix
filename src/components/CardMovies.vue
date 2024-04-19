@@ -82,7 +82,7 @@
         display: block;
     }
     .col:hover .img-container{
-        opacity: 0.2;
+        opacity: 0.1;
         transition: opacity 1s;
         transform: scale(1.1);
     }
