@@ -7,17 +7,18 @@
         data() {
             return {
                 flags: [
-                    {lang: 'it'},
-                    {lang: 'en'},
-                    {lang: 'fr'},
-                    {lang: 'de'},
-                    {lang: 'es'},
+                    'it',
+                    'en',
+                    'fr',
+                    'de',
+                    'es'
                 ],
             };
         },
         methods: {
-            getImageUrl(name) {
-                return new URL(`../assets/img/${name}-flag.png`, import.meta.url).href
+            getImageUrl() {
+                let flagLanguage = this.cardInfo.original_language;
+                return new URL(`../assets/img/${flagLanguage}-flag.png`, import.meta.url).href
             }
         }
     }
@@ -32,37 +33,13 @@
         <div class="position">
             <div>Name:{{ cardInfo.title || cardInfo.name }}</div>
             <div>Original Name: {{ cardInfo.original_title || cardInfo.original_name }}</div>
-            <div class="language-container" v-if="cardInfo.original_language === flags[0].lang">
+            <div class="language-container">
                 Language: 
                 <div class="flag-container">
-                    <img :src="getImageUrl(flags[0].lang)" :alt="cardInfo.original_language">
+                    <img v-if="flags.includes(cardInfo.original_language)" :src="getImageUrl()" :alt="cardInfo.original_language">
+                    <div v-else>{{ cardInfo.original_language }}</div>
                 </div>
             </div>
-            <div class="language-container" v-else-if="cardInfo.original_language === flags[1].lang">
-                Language: 
-                <div class="flag-container">
-                    <img :src="getImageUrl(flags[1].lang)" :alt="cardInfo.original_language">
-                </div>
-            </div>
-            <div class="language-container" v-else-if="cardInfo.original_language === flags[2].lang">
-                Language: 
-                <div class="flag-container">
-                    <img :src="getImageUrl(flags[2].lang)" :alt="cardInfo.original_language">
-                </div>
-            </div>
-            <div class="language-container" v-else-if="cardInfo.original_language === flags[3].lang">
-                Language: 
-                <div class="flag-container">
-                    <img :src="getImageUrl(flags[3].lang)" :alt="cardInfo.original_language">
-                </div>
-            </div>
-            <div class="language-container" v-else-if="cardInfo.original_language === flags[4].lang">
-                Language: 
-                <div class="flag-container">
-                    <img :src="getImageUrl(flags[4].lang)" :alt="cardInfo.original_language">
-                </div>
-            </div>
-            <div v-else>Language: {{ cardInfo.original_language }}</div>
             <div>Vote:{{ cardInfo.vote_average }}</div>
             <div>Overview: {{ cardInfo.overview }}</div>
             <!-- <i class="fa-solid fa-star"></i> -->
